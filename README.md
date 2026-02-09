@@ -4,7 +4,7 @@ This repository contains both the `frontend` and `backend` projects in a single 
 
 Quick commands (from repository root):
 
-- Install dependencies (pnpm):
+- Install dependencies (pnpm) for `frontend` and `backend` separately:
 
 ```bash
 pnpm install
@@ -17,18 +17,11 @@ pnpm --filter backend start:dev   # start backend in dev mode
 pnpm --filter frontend dev       # start frontend (Next.js) in dev mode
 ```
 
-- Run both (requires `concurrently`):
-
-```bash
-pnpm dev
-```
-
 - Seed mocked voltage data (backend):
 
 ```bash
 cd backend
-# ensure MONGO_URI is set or use fallback
-MONGO_URI="mongodb://localhost/nest" pnpm run seed:voltage
+pnpm run seed:voltage
 ```
 
 Notes:
