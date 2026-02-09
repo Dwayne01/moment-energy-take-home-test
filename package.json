@@ -1,0 +1,15 @@
+{
+  "name": "moment-energy-take-home",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev:backend": "pnpm --filter backend --parallel start:dev",
+    "dev:frontend": "pnpm --filter frontend --parallel dev",
+    "dev": "concurrently \"pnpm dev:backend\" \"pnpm dev:frontend\"",
+    "seed:voltage": "pnpm --filter backend --parallel run seed:voltage"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
