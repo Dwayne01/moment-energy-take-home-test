@@ -48,15 +48,14 @@ export default function VoltageScreen() {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-10">
-      <div className="w-full font-mono text-sm lg:flex">
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+      <div className="w-full font-mono text-sm flex items-center gap-2">
+        <FormControl className="flex-1 lg:flex-none lg:w-64">
           <InputLabel id="demo-simple-select-helper-label">
             Time Range
           </InputLabel>
           <Select
             value={timeRange || ""}
             label="Time Range"
-            className="w-48"
             onChange={handleChange}
           >
             {options.map((option) => (
@@ -67,6 +66,7 @@ export default function VoltageScreen() {
           </Select>
         </FormControl>
         <IconButton
+          className="flex-none w-16"
           onClick={() => {
             setTimeRange("");
             refetch();
@@ -90,6 +90,8 @@ export default function VoltageScreen() {
             {
               data: yData,
               label: "Voltage (V)",
+              curve: "monotoneX",
+              area: true,
             },
           ]}
         />

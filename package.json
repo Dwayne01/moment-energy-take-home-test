@@ -6,7 +6,6 @@
   "scripts": {
     "dev:backend": "pnpm --filter backend --parallel start:dev",
     "dev:frontend": "pnpm --filter frontend --parallel dev",
-    "dev": "concurrently \"pnpm dev:backend\" \"pnpm dev:frontend\"",
     "seed:voltage": "pnpm --filter backend --parallel run seed:voltage"
   },
   "devDependencies": {
